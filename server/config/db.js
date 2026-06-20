@@ -2,10 +2,12 @@
 // we are going to be connecting to a mongoose db and using it for our blog
 
 const mongoose = require('mongoose');
+
+const mongoURI = "mongodb://localhost:27017"
 const connectDB = async () => {
     try {
         mongoose.set('strictQuery', false);
-        const conn = await mongoose.connect(process.env.MONGODB_URI);
+        const conn = await mongoose.connect(process.env.MONGODB_URI || mongoURI);
         console.log(`Database Connected: ${conn.connection.host}`);
     } catch (error) {
         console.log(`Database not connected, Error: ${error}`);

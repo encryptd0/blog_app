@@ -47,7 +47,7 @@ router.get('/about', (req, res) => {
 
 
 router.get('/contact', (req, res) => {
-    res.render('about');
+    res.render('contact');
 });
 
 //now we export our router module so the app should work
